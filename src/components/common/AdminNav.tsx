@@ -45,8 +45,10 @@ export const AdminNav: FC<Props> = ({ navItems }): JSX.Element => {
   useEffect(() => {
     const navState = localStorage.getItem(NAV_VISIBILITY);
     if (navState !== null) {
-      setVisible(false);
-      toggleNav(true);
+      if (navState === "false") {
+        setVisible(false);
+        toggleNav(true);
+      }
     } else {
       setVisible(true);
     }
@@ -55,7 +57,7 @@ export const AdminNav: FC<Props> = ({ navItems }): JSX.Element => {
   return (
     <nav
       ref={navRef}
-      className="h-screen w-60 overflow-hidden shadow-sm bg-secondary-light dark:bg-secondary-dark flex flex-col justify-between transition-width"
+      className="h-screen w-60 shadow-sm bg-secondary-light dark:bg-secondary-dark flex flex-col justify-between transition-width overflow-hidden sticky top-0"
     >
       <div>
         <Link href="/admin" legacyBehavior>
