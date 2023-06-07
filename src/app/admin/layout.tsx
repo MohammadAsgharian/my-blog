@@ -1,5 +1,8 @@
+"use client";
+
+import { AdminNav } from "@/components/common/AdminNav";
 import React from "react";
-import AdminNav from "@/components/common/AdminNav";
+
 import {
   AiOutlineContainer,
   AiOutlineDashboard,
@@ -20,11 +23,10 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="flex">
       {/* Include shared UI here e.g. a header or sidebar */}
       <AdminNav navItems={navItems}></AdminNav>
-
-      {children}
+      <div className="flex-1 p-4">{children}</div>
     </div>
   );
 }
