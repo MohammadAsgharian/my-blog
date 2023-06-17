@@ -19,7 +19,7 @@ export const InsertLink: FC<Props> = ({
         <Button>
           <BsLink45Deg />
         </Button>
-        <div className="absolute top-full mt-4">
+        <div className="absolute top-full mt-4 z-50">
             <LinkForm></LinkForm>
         </div>
     </div>
